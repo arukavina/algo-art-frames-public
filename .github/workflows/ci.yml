@@ -1,0 +1,61 @@
+name: CI
+
+# Runs on pull_request (never pull_request_target), so code from forks never
+# sees this repository's secrets.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+
+      - name: Ruff
+        run: ruff check .
+
+      - name: Pytest
+        env:
+          # Lets test_no_slug_removed_or_renamed compare against the PR's base branch.
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
+        run: pytest
+
+  preview:
+    name: Render previews
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: python -m pip install -e .
+
+      - name: Render every poster to SVG
+        run: python -m algo_art_frames.preview --all --out out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: poster-previews
+          path: out/
+          retention-days: 14
