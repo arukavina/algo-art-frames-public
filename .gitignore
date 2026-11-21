@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local poster previews (python -m algo_art_frames.preview)
+out/
