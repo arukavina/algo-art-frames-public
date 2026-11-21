@@ -1,0 +1,4 @@
+# Requests a review from the maintainer on every PR. Any collaborator's
+# approval can still satisfy branch protection, as long as "Require review
+# from Code Owners" stays off.
+* @arukavina
