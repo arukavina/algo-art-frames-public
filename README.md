@@ -1,10 +1,18 @@
-# Algorithmic Art Frames: algorithm plugins
+# Algorithmic Art Frames
 
-The algorithm posters behind [pseudocode.art](https://pseudocode.art), plus the small SVG rendering SDK they are drawn with. Each famous algorithm (binary search, quicksort, RSA, PageRank, backpropagation, and more) is one self-contained Python module that turns the algorithm into minimalist, print-ready wall art.
+**Famous algorithms, drawn as minimalist posters. One Python file each.**
 
-Every poster follows the same style: a dark (or light) canvas with a title, a one-line tagline, a generative diagram and a short pseudocode snippet.
+Algorithmic Art Frames is an educational, open source project for people learning data visualization and for anyone who loves making art with computers. Each poster turns a famous algorithm into a print-ready SVG: a title, a one-line tagline, a generative diagram and the pseudocode behind it. Every poster here is published on [pseudocode.art](https://pseudocode.art).
 
-**Want to add your own algorithm?** Read [CONTRIBUTING.md](CONTRIBUTING.md). You only need Python.
+Some examples:
+
+![Example posters: Backpropagation, Linear Congruential Generator, A* Search, Ray Tracing, Monte Carlo and Binary Search](assets/gallery.png)
+
+## Why contribute
+
+This is a passion project. You don't need to be the best programmer or the best designer to add a poster, and nobody is keeping score. In a time when AI can generate almost anything in seconds, a poster here is something you made yourself: an algorithm you care about, drawn the way you see it. Pick one, give it your own style, and share it.
+
+**Ready?** Read [CONTRIBUTING.md](CONTRIBUTING.md). All you need is Python.
 
 ## Quick start
 
@@ -44,7 +52,7 @@ tests/
 ## How a merged poster goes live
 
 1. You open a PR here. CI runs the lint, the tests and the safety checks, and uploads rendered SVG previews of every poster as a workflow artifact.
-2. A maintainer reviews the poster and approves the PR.
+2. A maintainer reviews the poster and approves the PR (when possible)
 3. Once it's merged into `main`, your poster is published on pseudocode.art automatically.
 
 ## License
