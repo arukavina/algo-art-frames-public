@@ -20,10 +20,10 @@ Each poster is a plugin: one Python module with a title, a tagline, a pseudocode
 
 ### 1. Fork and set up
 
-Fork this repo on GitHub, clone your fork and install it with the dev tools. Steps 1 and 5 are also all you need to explore the existing posters.
+Clone this repo and install it with the dev tools. Steps 1 and 5 are also all you need to explore the existing posters.
 
 ```bash
-git clone https://github.com/<you>/algo-art-frames-public.git
+git clone https://github.com/arukavina/algo-art-frames-public.git
 cd algo-art-frames-public
 python -m venv .venv
 source .venv/bin/activate          # Windows PowerShell: .venv\Scripts\Activate.ps1
@@ -70,12 +70,27 @@ python -m algo_art_frames.preview --help                   # every option
 
 ### 6. Check and open a PR
 
-Run the checks, then open a PR against `main`. CI runs them again and renders previews of every poster. Once a maintainer approves and merges it, your poster is published on pseudocode.art.
+Run the checks first:
 
 ```bash
 pytest
 ruff check .
 ```
+
+To send your poster you need a **fork**: your own copy of this repo on GitHub. Only maintainers can push branches to this repo, so contributors push their branch to their fork and open a pull request from there. With the [GitHub CLI](https://cli.github.com):
+
+```bash
+gh repo fork --remote          # creates your fork; it becomes "origin" and this repo "upstream"
+git checkout -b my-poster
+git add src/algo_art_frames/algorithms/dijkstra.py src/algo_art_frames/algorithms/__init__.py tests/test_algorithms.py
+git commit -m "feat: add dijkstra poster"
+git push -u origin my-poster
+gh pr create                   # opens the pull request against this repo's main
+```
+
+Without the CLI: click **Fork** at the top of this repo's GitHub page, add your fork as a remote with `git remote add fork` followed by your fork's URL, push with `git push -u fork my-poster`, and open the pull request from the banner GitHub shows on your fork.
+
+CI runs the checks again and renders previews of every poster. Once a maintainer approves and merges it, your poster is published on pseudocode.art.
 
 ## What CI checks
 
