@@ -5,6 +5,9 @@ import math
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Fast Fourier Transform"
+TAGLINE = "From time to frequency. Reduce. Reuse. Conquer."
+
 PSEUDOCODE = [
     "FFT(x):",
     "    if N == 1: return x",
@@ -32,8 +35,8 @@ def _waveform_points(x: float, y: float, w: float, h: float) -> list[tuple[float
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Fast Fourier Transform",
-        tagline="From time to frequency. Reduce. Reuse. Conquer.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -95,8 +98,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="fast-fourier-transform",
-    title="Fast Fourier Transform",
-    tagline="From time to frequency. Reduce. Reuse. Conquer.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.SIGNAL_PROCESSING,
     pseudocode=PSEUDOCODE,
     draw=draw,

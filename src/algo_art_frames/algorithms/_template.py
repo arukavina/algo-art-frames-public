@@ -14,6 +14,11 @@ CONTRIBUTING.md).
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+# Defined once and used both on the poster (draw) and in the catalog (PLUGIN),
+# so the two can never drift apart.
+TITLE = "TODO Title"
+TAGLINE = "TODO one-line tagline."
+
 PSEUDOCODE = [
     "TODO: step 1",
     "TODO: step 2",
@@ -24,8 +29,8 @@ PSEUDOCODE = [
 def draw(ctx: RenderContext) -> str:
     dwg, _box = new_canvas(
         ctx,
-        title="TODO Title",
-        tagline="TODO one-line tagline.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -40,8 +45,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="TODO-kebab-case-slug",
-    title="TODO Title",
-    tagline="TODO one-line tagline.",
+    title=TITLE,
+    tagline=TAGLINE,
     # TODO: pick whichever category fits best from AlgorithmCategory (base.py),
     # for instance AlgorithmCategory.SEARCH, .SORTING, .GRAPH,
     # .MACHINE_LEARNING, .GRAPHICS, and so on.

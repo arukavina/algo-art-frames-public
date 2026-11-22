@@ -14,6 +14,9 @@ from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import ContentBox, RenderContext, new_canvas
 from algo_art_frames.render.syntax import SYNTAX_COLORS, tokenize_line
 
+TITLE = "A* Search"
+TAGLINE = "The best path is found by looking ahead."
+
 PSEUDOCODE = [
     "f(n) = g(n) + h(n)",
     "g(n) = cost from start",
@@ -134,8 +137,8 @@ def draw(ctx: RenderContext) -> str:
     # of relying on new_canvas's usual bottom-of-poster block.
     dwg, box = new_canvas(
         ctx,
-        title="A* Search",
-        tagline="The best path is found by looking ahead.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=[],
     )
 
@@ -338,8 +341,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="a-star-search",
-    title="A* Search",
-    tagline="The best path is found by looking ahead.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.SEARCH,
     pseudocode=PSEUDOCODE,
     draw=draw,

@@ -7,6 +7,9 @@ import random
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "PageRank"
+TAGLINE = "Importance flows through connections."
+
 PSEUDOCODE = ["A page is important if important pages link to it."]
 
 PERIPHERAL_COLOR = "#5EC8F8"
@@ -16,8 +19,8 @@ NODE_COUNT = 12
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="PageRank",
-        tagline="Importance flows through connections.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -58,8 +61,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="pagerank",
-    title="PageRank",
-    tagline="Importance flows through connections.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.GRAPH,
     pseudocode=PSEUDOCODE,
     draw=draw,

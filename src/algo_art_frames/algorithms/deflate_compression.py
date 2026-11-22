@@ -8,6 +8,9 @@ assigning shorter codes to whichever letters remain (Huffman).
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Deflate Compression"
+TAGLINE = "Find repetition. Remove redundancy."
+
 PSEUDOCODE = [
     "LZ77 finds repeats.",
     "Huffman codes them efficiently.",
@@ -30,8 +33,8 @@ LEAVES = [
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Deflate Compression",
-        tagline="Find repetition. Remove redundancy.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -137,8 +140,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="deflate-compression",
-    title="Deflate Compression",
-    tagline="Find repetition. Remove redundancy.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.COMPRESSION,
     pseudocode=PSEUDOCODE,
     draw=draw,
