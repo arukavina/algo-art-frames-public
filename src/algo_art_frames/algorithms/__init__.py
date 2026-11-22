@@ -15,6 +15,7 @@ from algo_art_frames.algorithms import (
     hyperloglog,
     k_means_clustering,
     knuth_morris_pratt,
+    linear_congruential_generator,
     minimax,
     monte_carlo,
     pagerank,
@@ -42,6 +43,7 @@ _MODULES = (
     hyperloglog,
     pagerank,
     backpropagation,
+    linear_congruential_generator,
 )
 
 
