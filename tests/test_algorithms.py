@@ -24,10 +24,11 @@ EXPECTED_SLUGS = {
     "hyperloglog",
     "pagerank",
     "backpropagation",
+    "linear-congruential-generator",
 }
 
 
-def test_registry_has_all_sixteen_algorithms():
+def test_registry_has_every_expected_algorithm():
     assert set(REGISTRY) == EXPECTED_SLUGS
 
 
