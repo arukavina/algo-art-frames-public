@@ -28,6 +28,9 @@ from algo_art_frames.render.canvas import (
     new_canvas,
 )
 
+TITLE = "Backpropagation"
+TAGLINE = "Learn by sending the error backward."
+
 PSEUDOCODE = [
     "z^(l) = W^(l) . phi^(l-1) + b^(l)",
     "phi^(l) = sigma(z^(l))",
@@ -545,8 +548,8 @@ def draw(ctx: RenderContext) -> str:
     # reservation is replicated manually instead.
     dwg, box = new_canvas(
         ctx,
-        title="Backpropagation",
-        tagline="Learn by sending the error backward.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=[],
     )
 
@@ -672,8 +675,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="backpropagation",
-    title="Backpropagation",
-    tagline="Learn by sending the error backward.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.MACHINE_LEARNING,
     pseudocode=PSEUDOCODE,
     draw=draw,

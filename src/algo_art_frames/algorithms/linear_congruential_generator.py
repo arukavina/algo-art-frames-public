@@ -18,6 +18,9 @@ import math
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Linear Congruential Generator"
+TAGLINE = "One line of arithmetic, a stream of (almost-)random numbers."
+
 PSEUDOCODE = [
     "x[n+1] = (a * x[n] + c) mod m",
     "u[n]   = x[n] / m",
@@ -274,8 +277,8 @@ def _draw_strip(dwg, ctx, x, y, width, height, family):
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Linear Congruential Generator",
-        tagline="One line of arithmetic, a stream of almost-random numbers.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -348,9 +351,9 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="linear-congruential-generator",
-    title="Linear Congruential Generator",
-    tagline="One line of arithmetic, a stream of (almost-)random numbers.",
-    category=AlgorithmCategory.PROBABILITY,
+    title=TITLE,
+    tagline=TAGLINE,
+    category=AlgorithmCategory.RANDOMNESS,
     pseudocode=PSEUDOCODE,
     draw=draw,
     accent="#2FB56B",

@@ -9,6 +9,9 @@ curved shift.
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Knuth-Morris-Pratt"
+TAGLINE = "Never recheck what you already know."
+
 PSEUDOCODE = [
     "for each mismatch:",
     "    shift pattern by LPS[j-1]",
@@ -45,8 +48,8 @@ def _lps(pattern: str) -> list[int]:
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Knuth-Morris-Pratt",
-        tagline="Never recheck what you already know.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -200,8 +203,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="knuth-morris-pratt",
-    title="Knuth-Morris-Pratt",
-    tagline="Never recheck what you already know.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.STRINGS,
     pseudocode=PSEUDOCODE,
     draw=draw,

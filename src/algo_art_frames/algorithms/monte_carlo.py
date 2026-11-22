@@ -11,6 +11,9 @@ import random
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Monte Carlo"
+TAGLINE = "Randomness can reveal the truth."
+
 PSEUDOCODE = [
     "Estimate pi = 4 x (points in circle / total points)",
 ]
@@ -22,8 +25,8 @@ SEED = 7
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Monte Carlo",
-        tagline="Randomness can reveal the truth.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -71,9 +74,9 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="monte-carlo",
-    title="Monte Carlo",
-    tagline="Randomness can reveal the truth.",
-    category=AlgorithmCategory.PROBABILITY,
+    title=TITLE,
+    tagline=TAGLINE,
+    category=AlgorithmCategory.RANDOMNESS,
     pseudocode=PSEUDOCODE,
     draw=draw,
     accent="#F2994A",

@@ -12,6 +12,9 @@ import random
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "RSA Encryption"
+TAGLINE = "Easy to lock. Hard to unlock without the key."
+
 TEAL = "#5EC8F8"
 PINK = "#C792EA"
 
@@ -35,8 +38,8 @@ def _dot_disc(dwg, cx, cy, r, color, count, seed):
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="RSA Encryption",
-        tagline="Easy to lock. Hard to unlock without the key.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -142,8 +145,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="rsa-encryption",
-    title="RSA Encryption",
-    tagline="Easy to lock. Hard to unlock without the key.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.CRYPTOGRAPHY,
     pseudocode=PSEUDOCODE,
     draw=draw,

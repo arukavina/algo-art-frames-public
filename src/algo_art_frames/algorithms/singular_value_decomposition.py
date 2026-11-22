@@ -3,6 +3,9 @@
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Singular Value Decomposition"
+TAGLINE = "Every matrix is a combination of simple patterns."
+
 PSEUDOCODE = [
     "A = U x Sigma x V^T",
     "U: features",
@@ -31,8 +34,8 @@ def _swatch(dwg, x: float, y: float, w: float, h: float, color: str, opacity: fl
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Singular Value Decomposition",
-        tagline="Every matrix is a combination of simple patterns.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -103,8 +106,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="singular-value-decomposition",
-    title="Singular Value Decomposition",
-    tagline="Every matrix is a combination of simple patterns.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.LINEAR_ALGEBRA,
     pseudocode=PSEUDOCODE,
     draw=draw,

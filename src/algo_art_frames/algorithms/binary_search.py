@@ -12,6 +12,9 @@ import re
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Binary Search"
+TAGLINE = "Halve the search space every step."
+
 ARRAY = [4, 9, 15, 23, 31, 42, 55, 68, 77, 89]
 TARGET = 42
 
@@ -139,8 +142,8 @@ def draw(ctx: RenderContext) -> str:
     # instead of relying on new_canvas's usual bottom-of-poster block.
     dwg, box = new_canvas(
         ctx,
-        title="Binary Search",
-        tagline="Halve the search space every step.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=[],
     )
 
@@ -371,8 +374,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="binary-search",
-    title="Binary Search",
-    tagline="Halve the search space every step.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.SEARCH,
     pseudocode=PSEUDOCODE,
     draw=draw,

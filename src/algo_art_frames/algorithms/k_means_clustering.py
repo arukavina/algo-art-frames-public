@@ -6,6 +6,9 @@ import random
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "K-Means Clustering"
+TAGLINE = "Discover structure in scattered data."
+
 PSEUDOCODE = [
     "repeat:",
     "    assign points to nearest centroid",
@@ -26,8 +29,8 @@ POINTS_PER_CLUSTER = 30
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="K-Means Clustering",
-        tagline="Discover structure in scattered data.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -64,8 +67,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="k-means-clustering",
-    title="K-Means Clustering",
-    tagline="Discover structure in scattered data.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.MACHINE_LEARNING,
     pseudocode=PSEUDOCODE,
     draw=draw,

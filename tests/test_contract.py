@@ -11,6 +11,7 @@ import re
 import subprocess
 import time
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 import pytest
 
@@ -138,6 +139,18 @@ def test_plugin_render_budget(slug, theme_name):
     assert elapsed < MAX_RENDER_SECONDS, f"{slug} took {elapsed:.2f}s (limit {MAX_RENDER_SECONDS}s)"
     size = len(svg.encode("utf-8"))
     assert size < MAX_SVG_BYTES, f"{slug} produced {size} bytes of SVG (limit {MAX_SVG_BYTES})"
+
+
+@pytest.mark.parametrize("slug", sorted(REGISTRY))
+def test_poster_shows_the_catalog_title_and_tagline(slug):
+    """The title and tagline drawn on the poster must be the ones in PLUGIN,
+    which the catalog lists. Define them once (TITLE and TAGLINE, see
+    _template.py) and pass the same constants to new_canvas and PLUGIN."""
+    plugin = REGISTRY[slug]
+    ctx = RenderContext(theme=resolve_theme("dark", plugin.accent), width=1200, height=1600)
+    svg = plugin.draw(ctx)
+    for field, value in (("title", plugin.title), ("tagline", plugin.tagline)):
+        assert escape(value) in svg, f"{slug}: poster does not show the catalog {field} {value!r}"
 
 
 DISPLAY_TOGGLES = {

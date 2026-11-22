@@ -8,6 +8,9 @@ recursion depth.
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Quicksort"
+TAGLINE = "Divide to conquer. Order emerges from partition."
+
 PSEUDOCODE = [
     "if len(A) <= 1: return A",
     "pivot = choose(A)",
@@ -33,8 +36,8 @@ def _path_indices() -> list[int]:
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Quicksort",
-        tagline="Divide to conquer. Order emerges from partition.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -79,8 +82,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="quicksort",
-    title="Quicksort",
-    tagline="Divide to conquer. Order emerges from partition.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.SORTING,
     pseudocode=PSEUDOCODE,
     draw=draw,

@@ -42,7 +42,7 @@ class AlgorithmCategory(str, Enum):
     CRYPTOGRAPHY = "cryptography"
     COMPRESSION = "compression"
     STREAMING = "streaming"
-    PROBABILITY = "probability"
+    RANDOMNESS = "randomness"
     OPTIMIZATION = "optimization"
     MACHINE_LEARNING = "machine-learning"
     SIGNAL_PROCESSING = "signal-processing"
@@ -98,6 +98,8 @@ Merged posters go live automatically, so `tests/test_contract.py` keeps plugin c
 - may not use `eval`, `exec`, `open`, `__import__`, `getattr`/`setattr` and similar built-ins, or dunder attributes such as `__globals__`;
 - must render in under 2 seconds and produce less than 1 MB of SVG, in both themes;
 - must use a kebab-case slug matching its filename, a valid hex accent, a real `AlgorithmCategory`, and no leftover `TODO` text;
+- must draw the same title and tagline it lists in `PLUGIN` (define `TITLE` and `TAGLINE` once and use them in both places, as `_template.py` does);
+- must visibly change when the frame, pseudocode, tagline or author display option is switched (build the poster with `new_canvas` and it is handled for you);
 - must never rename or remove an existing slug (published posters are identified by their slug).
 
 For randomness, use a seeded `random.Random(<seed>)` so a poster looks the same on every render.

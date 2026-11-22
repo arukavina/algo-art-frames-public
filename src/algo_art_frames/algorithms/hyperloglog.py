@@ -10,6 +10,9 @@ import random
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "HyperLogLog"
+TAGLINE = "Count billions with a tiny memory."
+
 PSEUDOCODE = ["Small memory. Huge streams. Accurate estimate."]
 
 REGISTER_COUNT = 8
@@ -20,8 +23,8 @@ REGISTER_HEIGHTS = [_RNG.uniform(0.3, 1.0) for _ in range(REGISTER_COUNT)]
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="HyperLogLog",
-        tagline="Count billions with a tiny memory.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -91,8 +94,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="hyperloglog",
-    title="HyperLogLog",
-    tagline="Count billions with a tiny memory.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.STREAMING,
     pseudocode=PSEUDOCODE,
     draw=draw,

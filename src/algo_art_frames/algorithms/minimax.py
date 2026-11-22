@@ -8,6 +8,9 @@ in the accent color.
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Minimax"
+TAGLINE = "Think ahead. Act optimally."
+
 PSEUDOCODE = [
     "MAX chooses the highest score.",
     "MIN chooses the lowest.",
@@ -37,8 +40,8 @@ def _evaluate() -> tuple[list[int], list[int], int, list[int]]:
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Minimax",
-        tagline="Think ahead. Act optimally.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -119,8 +122,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="minimax",
-    title="Minimax",
-    tagline="Think ahead. Act optimally.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.GAME_THEORY,
     pseudocode=PSEUDOCODE,
     draw=draw,

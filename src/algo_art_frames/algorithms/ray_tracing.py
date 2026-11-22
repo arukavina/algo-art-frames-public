@@ -17,6 +17,9 @@ from algo_art_frames.render.canvas import (
 )
 from algo_art_frames.render.syntax import SYNTAX_COLORS, tokenize_line
 
+TITLE = "Ray Tracing"
+TAGLINE = "Simulate the path of light."
+
 PSEUDOCODE = [
     "set camera and viewport as desired",
     "for each pixel in viewport:",
@@ -691,7 +694,7 @@ def _draw_pseudocode(dwg, ctx: RenderContext, box: ContentBox):
 
 def draw(ctx: RenderContext) -> str:
     dwg, full_box = new_canvas(
-        ctx, title="Ray Tracing", tagline="Simulate the path of light.", pseudocode=[]
+        ctx, title=TITLE, tagline=TAGLINE, pseudocode=[]
     )
     box = full_box
     if ctx.show_pseudocode:
@@ -723,8 +726,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="ray-tracing",
-    title="Ray Tracing",
-    tagline="Simulate the path of light.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.GRAPHICS,
     pseudocode=PSEUDOCODE,
     draw=draw,

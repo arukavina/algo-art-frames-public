@@ -3,6 +3,9 @@
 from algo_art_frames.algorithms.base import AlgorithmCategory, AlgorithmPlugin
 from algo_art_frames.render.canvas import RenderContext, new_canvas
 
+TITLE = "Genetic Algorithms"
+TAGLINE = "Survival of the fittest solution."
+
 PSEUDOCODE = [
     "Evaluate -> Select -> Recombine -> Mutate -> Repeat",
 ]
@@ -15,8 +18,8 @@ ROWS = 8
 def draw(ctx: RenderContext) -> str:
     dwg, box = new_canvas(
         ctx,
-        title="Genetic Algorithms",
-        tagline="Survival of the fittest solution.",
+        title=TITLE,
+        tagline=TAGLINE,
         pseudocode=PSEUDOCODE,
     )
 
@@ -70,8 +73,8 @@ def draw(ctx: RenderContext) -> str:
 
 PLUGIN = AlgorithmPlugin(
     slug="genetic-algorithms",
-    title="Genetic Algorithms",
-    tagline="Survival of the fittest solution.",
+    title=TITLE,
+    tagline=TAGLINE,
     category=AlgorithmCategory.OPTIMIZATION,
     pseudocode=PSEUDOCODE,
     draw=draw,
