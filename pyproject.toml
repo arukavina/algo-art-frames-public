@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "algo-art-frames-public"
-version = "0.1.0"
+version = "0.2.0"
 description = "Algorithm poster plugins and the SVG rendering SDK behind pseudocode.art"
 readme = "README.md"
 authors = [{ name = "Andrei Rukavina" }]

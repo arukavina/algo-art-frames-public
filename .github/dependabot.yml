@@ -1,0 +1,24 @@
+# Weekly update checks. Security fixes are opened as soon as an advisory
+# appears, independently of this schedule.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    # pyproject.toml lists minimum versions (svgwrite>=1.4, pydantic>=2.6);
+    # only raise a minimum when a newer release actually requires it.
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: chore
+      prefix-development: chore
+      include: scope
+    labels: [dependencies]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    labels: [dependencies]
