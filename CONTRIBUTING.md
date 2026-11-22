@@ -5,7 +5,7 @@ The best way to contribute is to add a new algorithm poster. Each algorithm is a
 ## Set up
 
 ```bash
-git clone https://github.com/<you>/algo-art-frames-public.git   # your fork
+git clone https://github.com/arukavina/algo-art-frames-public.git
 cd algo-art-frames-public
 python -m venv .venv
 source .venv/bin/activate          # Windows PowerShell: .venv\Scripts\Activate.ps1
@@ -61,7 +61,7 @@ Need a category that doesn't fit any of these? Add a new member to the enum in t
    ```bash
    cp src/algo_art_frames/algorithms/_template.py src/algo_art_frames/algorithms/<your_algorithm>.py
    ```
-2. Fill in `PSEUDOCODE`, the `draw()` function and the `PLUGIN` metadata. `binary_search.py` and `quicksort.py` are good references for the level of detail expected.
+2. Set `TITLE` and `TAGLINE` once at the top, then fill in `PSEUDOCODE`, the `draw()` function and the `PLUGIN` metadata. `binary_search.py` and `quicksort.py` are good references for the level of detail expected.
 3. Register it in `src/algo_art_frames/algorithms/__init__.py`: import your module and add it to the `_MODULES` tuple. `REGISTRY` is built from that tuple automatically.
 4. Add your new slug to `EXPECTED_SLUGS` in `tests/test_algorithms.py`.
 5. Look at it in both themes:
@@ -84,11 +84,26 @@ Need a category that doesn't fit any of these? Add a new member to the enum in t
    | `--theme dark` | renders only that theme (repeatable) |
    | `--width 900 --height 1200` | changes the canvas size |
 
-6. Run the checks, then open a PR with a screenshot of both previews:
+6. Run the checks, then open a pull request from your fork (see [Opening your pull request](#opening-your-pull-request)) with a screenshot of both previews:
    ```bash
    ruff check .
    pytest
    ```
+
+## Opening your pull request
+
+To send your poster you need a **fork**: your own copy of this repo on GitHub. Only maintainers can push branches to this repo, so contributors push their branch to their fork and open a pull request from there. With the [GitHub CLI](https://cli.github.com):
+
+```bash
+gh repo fork --remote          # creates your fork; it becomes "origin" and this repo "upstream"
+git checkout -b my-poster
+git add src/algo_art_frames/algorithms/dijkstra.py src/algo_art_frames/algorithms/__init__.py tests/test_algorithms.py
+git commit -m "feat: add dijkstra poster"
+git push -u origin my-poster
+gh pr create                   # opens the pull request against this repo's main
+```
+
+Without the CLI: click **Fork** at the top of this repo's GitHub page, add your fork as a remote with `git remote add fork` followed by your fork's URL, push with `git push -u fork my-poster`, and open the pull request from the banner GitHub shows on your fork.
 
 ## What the checks enforce
 
