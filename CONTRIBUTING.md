@@ -42,7 +42,7 @@ class AlgorithmCategory(str, Enum):
     CRYPTOGRAPHY = "cryptography"
     COMPRESSION = "compression"
     STREAMING = "streaming"
-    PROBABILITY = "probability"
+    RANDOMNESS = "randomness"
     OPTIMIZATION = "optimization"
     MACHINE_LEARNING = "machine-learning"
     SIGNAL_PROCESSING = "signal-processing"
