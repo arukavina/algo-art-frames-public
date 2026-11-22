@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ideas and questions
+    url: https://github.com/arukavina/algo-art-frames-public/discussions
+    about: Share a poster idea or ask a question in Discussions.
+  - name: See the posters
+    url: https://pseudocode.art
+    about: Browse, customize and download every published poster.
+  - name: Report a security problem
+    url: https://github.com/arukavina/algo-art-frames-public/security/advisories/new
+    about: Please report vulnerabilities privately, not in a public issue.
