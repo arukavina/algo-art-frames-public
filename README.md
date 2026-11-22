@@ -2,7 +2,7 @@
 
 **Famous algorithms, drawn as minimalist posters. One Python file each.**
 
-Algorithmic Art Frames is an educational, open source project for people learning data visualization and for anyone who loves making art with computers. Each poster turns a famous algorithm into a print-ready SVG: a title, a one-line tagline, a generative diagram and the pseudocode behind it. Every poster here is published on [pseudocode.art](https://pseudocode.art).
+Algorithmic Art Frames is an educational, open source project for people learning data visualization and for anyone who loves making art with computers. Each poster turns a famous algorithm into a print-ready SVG: a title, a one-line tagline, a hand-designed diagram drawn in code and the pseudocode behind it. Every poster here is published on [pseudocode.art](https://pseudocode.art).
 
 Some examples:
 
