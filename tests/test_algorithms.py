@@ -25,6 +25,7 @@ EXPECTED_SLUGS = {
     "pagerank",
     "backpropagation",
     "linear-congruential-generator",
+    "dbscan",
 }
 
 
