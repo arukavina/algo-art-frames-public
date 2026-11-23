@@ -9,6 +9,7 @@ from algo_art_frames.algorithms import (
     a_star_search,
     backpropagation,
     binary_search,
+    dbscan,
     deflate_compression,
     fast_fourier_transform,
     genetic_algorithms,
@@ -44,6 +45,7 @@ _MODULES = (
     pagerank,
     backpropagation,
     linear_congruential_generator,
+    dbscan,
 )
 
 
